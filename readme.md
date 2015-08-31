@@ -18,6 +18,10 @@ Unfortunately, beauty is subjective, so there will never be a clear stopping poi
 
 The best way to check your progress is to ask someone *else* to look at your site for 10 seconds and tell you what they don't like. People have a lot of trouble defining what looks good or bad, but everyone knows it when they see it.
 
+## There is a solution branch...
+
+...but it's not "right". There's no "right" -- that was just my take on Bootstrapping Grumblr, and I am by no means a visual designer. Feel free to refer to it to see how different classes are used, but please **do not** just copy it.
+
 ## To submit...
 
 ...do your usual forking, cloning, changing, pushing, and pull-requesting.
