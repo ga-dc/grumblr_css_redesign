@@ -6,9 +6,11 @@ So redesign it to look nicer!
 
 ## Your challenge...
 
-...is to use **only** Bootstrap **or only** Foundation, **without** touching anything but the HTML.
+...is to use Bootstrap or Foundation (or both!) **without** touching anything but the HTML.
 
-But this is a "soft challenge". The important thing is for you to flex your design muscles. This homework will be considered "complete" as long as it's clear you made some effort to redesign the site, no matter how you do it!
+That's right: no custom stylesheets. The exception is using SASS to, say, make `.form-control` apply to all `input`. (So to be really specific: no customizing with CSS *properties*.)
+
+But this is a "soft challenge". The important thing is for you to flex your design muscles. This homework will be considered "complete" as long as it's clear you made some effort to redesign the site using Bootstrap and/or Foundation.
 
 ## It looks nice enough when...
 
@@ -32,3 +34,6 @@ The best way to check your progress is to ask someone *else* to look at your sit
 
 https://[your_username].github.io/grumblr_css_redesign
 
+## Stuff to read
+
+- [How to make your site look half-decent (for programmers, by a programmer)](https://24ways.org/2012/how-to-make-your-site-look-half-decent)
