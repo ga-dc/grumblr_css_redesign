@@ -54,8 +54,8 @@
           <h2>{{ title }}</h2>
           <h3 class="subheader">by: {{ authorName }}</h3>
           <div class="right">
-            <a class="tiny edit radius button" href="#">Update</a>
-            <a class="tiny delete radius alert button" href="#">Delete</a>
+            <button class="tiny edit radius" href="#">Update</button>
+            <button class="tiny delete radius alert">Delete</button>
           </div>
           <p>{{ content }}</p>
           <img src="{{ photoUrl }}" alt="">
@@ -105,7 +105,7 @@
           <p>by: {{ authorName }}</p>
         </div>
         <div class="small-3 columns">
-          <a href="#" class="tiny deleteComment button radius alert">Delete</a>
+          <button class="tiny deleteComment radius alert">Delete</button>
         </div>
       </div>
     </div>
