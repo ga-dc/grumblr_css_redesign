@@ -22,7 +22,7 @@
   <h1>Grumblr</h1>
 
   <div id="createGrumble">
-    <button class="new">New Grumble</button>
+    <button class="new btn btn-lg btn-primary">New Grumble</button>
     <div class="formContainer"></div>
   </div>
 
@@ -30,7 +30,7 @@
   </div>
 
   <script id="grumbleTemplate" type="text/x-handlebars-template">
-    <h2>{{ title }} <span class='delete'>(X)</span></h2>
+    <h2>{{ title }} <span class='delete btn btn-danger'>Delete</span></h2>
     by: {{ authorName }}
     <p>
       {{ content }}
@@ -48,7 +48,7 @@
   </script>
 
   <script id="grumbleFormTemplate" type="text/x-handlebars-template">
-    <form class="grumbleForm">
+    <form class="grumbleForm form-control">
       <input type="text" name="title" value="{{ title }}">
       by: <input type="text" name="authorName" value="{{ authorName }}">
       <textarea name="content">{{ content }}</textarea>
