@@ -12,7 +12,7 @@ That's right: no custom stylesheets. The exception is using SASS to, say, make `
 
 But this is a "soft challenge". The important thing is for you to flex your design muscles. This homework will be considered "complete" as long as it's clear you made some effort to redesign the site using Bootstrap and/or Foundation.
 
-## It "done" when...
+## It's "done" when...
 
 ...you think it's done.
 
