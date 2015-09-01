@@ -6,6 +6,8 @@
   <script src="bower_components/underscore/underscore-min.js"></script>
   <script src="bower_components/handlebars/handlebars.min.js"></script>
   <script src="bower_components/backbone/backbone-min.js"></script>
+  <script src="bower_components/foundation/js/foundation.min.js"></script>
+  <script src="bower_components/foundation/js/foundation/foundation.topbar.js"></script>
   <script src="js/app.js"></script>
   <script src="js/backbone/routers/grumble.js"></script>
   <script src="js/backbone/models/comment.js"></script>
@@ -22,51 +24,92 @@
   <title>Grumblr</title>
 </head>
 <body>
-  <h1>Grumblr</h1>
-
-  <div id="createGrumble">
-    <button class="new">New Grumble</button>
+  <div class="sticky" id="createGrumble">
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="#">Grumblr</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon">
+          <a href="#" class="new"><span></span></a>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="right">
+          <li class="active">
+            <a class="new">Create Grumble</a>
+          </li>
+        </ul>
+      </section>
+    </nav>
     <div class="formContainer"></div>
   </div>
 
-  <div id="grumbles">
-  </div>
+  <div id="grumbles"></div>
 
   <script id="grumbleTemplate" type="text/x-handlebars-template">
-    <h2>{{ title }} <span class='delete'>(X)</span></h2>
-    by: {{ authorName }}
-    <p>
-      {{ content }}
-    </p>
-    <img src="{{ photoUrl }}" alt="">
-    <button class="edit">Update Grumble</button>
-    <form class="commentForm">
-      <label>Author Name:</label>
-      <input type="text" name="authorName">
-      <label>Content:</label>
-      <input type="text" name="content">
-      <button>Submit</button>
-    </form>
-    <div class="comments"></div>
+    <div class="panel radius">
+      <div class="row">
+        <div class="medium-6 columns">
+          <h2>{{ title }}</h2>
+          <h3 class="subheader">by: {{ authorName }}</h3>
+          <div class="right">
+            <a class="tiny edit radius button" href="#">Update</a>
+            <a class="tiny delete radius alert button" href="#">Delete</a>
+          </div>
+          <p>{{ content }}</p>
+          <img src="{{ photoUrl }}" alt="">
+        </div>
+        <div class="medium-6 columns">
+          <form class="commentForm">
+            <input type="text" name="content" placeholder="Comment">
+            <div class="row collapse">
+              <div class="small-9 columns">
+                <input type="text" name="authorName" placeholder="Author">
+              </div>
+              <div class="small-3 columns">
+                <button type="submit" class="postfix">Submit</button>
+              </div>
+            </div>
+          </form>
+          <div class="comments"></div>
+        </div>
+      </div>
+    </div>
   </script>
 
   <script id="grumbleFormTemplate" type="text/x-handlebars-template">
-    <form class="grumbleForm">
-      <input type="text" name="title" value="{{ title }}">
-      by: <input type="text" name="authorName" value="{{ authorName }}">
-      <textarea name="content">{{ content }}</textarea>
-      <img src="{{ photoUrl }}" alt="">
-      <input type="text" name="photoUrl" value="{{ photoUrl }}">
-      <button class="submit">Submit</button>
-      <button class="cancel">Cancel</button>
-    </form>
+    <div class="panel radius">
+      <form class="grumbleForm">
+        <input type="text" name="title" value="{{ title }}" placeholder="Title">
+        <input type="text" name="authorName" value="{{ authorName }}" placeholder="Author">
+        <textarea name="content" placeholder="Content">{{ content }}</textarea>
+        <input type="text" name="photoUrl" value="{{ photoUrl }}" placeholder="Photo URL">
+        <div class="row collapse">
+          <div class="small-9 columns">
+            <button class="submit expand">Submit</button>
+          </div>
+          <div class="small-3 columns">
+            <button class="cancel expand secondary">Cancel</button>
+          </div>
+        </div>
+      </form>
+    </div>
   </script>
 
   <script id="commentTemplate" type="text/x-handlebars-template">
-      <span>by: {{ authorName }}</span>
-      <div>{{ content }}</div>
-      <button class="deleteComment">Delete</button>
+    <div class="panel">
+      <p>{{ content }}</p>
+      <div class="row collapse">
+        <div class="small-9 columns">
+          <p>by: {{ authorName }}</p>
+        </div>
+        <div class="small-3 columns">
+          <a href="#" class="tiny deleteComment button radius alert">Delete</a>
+        </div>
+      </div>
+    </div>
   </script>
-
+  <script>$(document).foundation();</script>
 </body>
 </html>
