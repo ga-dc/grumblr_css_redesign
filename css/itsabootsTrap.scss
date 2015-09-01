@@ -1,0 +1,29 @@
+@import '../bower_components/bootstrap-sass/assets/stylesheets/bootstrap';
+
+button {
+  @extend .btn;
+}
+
+input,
+textarea {
+  @extend .form-control;
+}
+
+label {
+  @extend .control-label;
+}
+
+fieldset {
+  @extend .form-group;
+}
+
+.form-horizontal {
+  label {
+    @extend .col-sm-3;
+  }
+
+  div {
+    @extend .col-sm-9;
+  }
+
+}
