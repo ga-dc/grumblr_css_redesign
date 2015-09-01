@@ -15,36 +15,41 @@
   <script src="js/backbone/views/grumble.js"></script>
   <script src="js/backbone/views/grumbleList.js"></script>
   <script src="js/backbone/views/grumbleCreate.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <title>Grumblr</title>
 </head>
-<body>
-  <h1>Grumblr</h1>
-
-  <div id="createGrumble">
-    <button class="new">New Grumble</button>
+<body class="container">
+  <header class="jumbotron row" id="createGrumble">
+    <h1>Grumblr</h1>
+    <p>Like Tumblr, only more grumbly</p>
+    <button class="new btn btn-primary">New Grumble</button>
     <div class="formContainer"></div>
-  </div>
+  </header>
 
-  <div id="grumbles">
-  </div>
+  <main class="row" id="grumbles">
+  </main>
 
   <script id="grumbleTemplate" type="text/x-handlebars-template">
-    <h2>{{ title }} <span class='delete'>(X)</span></h2>
-    by: {{ authorName }}
-    <p>
-      {{ content }}
-    </p>
-    <img src="{{ photoUrl }}" alt="">
-    <button class="edit">Update Grumble</button>
-    <form class="commentForm">
-      <label>Author Name:</label>
-      <input type="text" name="authorName">
-      <label>Content:</label>
-      <input type="text" name="content">
-      <button>Submit</button>
-    </form>
-    <div class="comments"></div>
+      <div class="col-md-6 well">
+        <h2>{{ title }} <span class='delete'>(X)</span></h2>
+        by: {{ authorName }}
+        <p>
+          {{ content }}
+        </p>
+        <img class="img-responsive img-rounded" src="{{ photoUrl }}" alt="">
+      </div>
+      <div class="col-md-6">
+        <button class="edit">Update Grumble</button>
+        <div class="comments"></div>
+        <form class="commentForm">
+          <label>Author Name:</label>
+          <input type="text" name="authorName">
+          <label>Content:</label>
+          <input type="text" name="content">
+          <button>Submit</button>
+        </form>
+      </div>
   </script>
 
   <script id="grumbleFormTemplate" type="text/x-handlebars-template">
@@ -60,9 +65,9 @@
   </script>
 
   <script id="commentTemplate" type="text/x-handlebars-template">
-      <span>by: {{ authorName }}</span>
-      <div>{{ content }}</div>
-      <button class="deleteComment">Delete</button>
+    <span>by: {{ authorName }}</span>
+    <div>{{ content }}</div>
+    <button class="deleteComment">Delete</button>
   </script>
 
 </body>
