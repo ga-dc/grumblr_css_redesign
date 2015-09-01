@@ -41,6 +41,7 @@
                  <div class="well">
                     <h2>{{ title }} <span class='delete'>(X)</span></h2>
                     <p style="margin:15px;"> {{ content }}
+                        by: {{ authorName }} </p>
                     <button class="edit btn-primary" style="margin:15px;">Update Grumble</button>
                     <img class="img-responsive" src="{{ photoUrl }}" alt="">
                 </div>
@@ -52,10 +53,10 @@
                     </div>
                     <div class="well">
                         <form class="commentForm" >
-                        <label>Author Name:</label>
-                        <input type="text" name="authorName">
-                        <label>Content:</label>
-                        <input type="text" name="content">
+                        <p><label class="form-inline">Author Name:</label>
+                        <input type="text" class="form-inline" name="authorName"></p>
+                        <p><label class="form-inline">Content:</label>
+                        <input type="text" class="form-inline" name="content"></p>
                         <button class="btn-block">Submit</button>
                         </form>
                     </div>
