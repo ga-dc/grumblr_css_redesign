@@ -12,13 +12,19 @@ That's right: no custom stylesheets. The exception is using SASS to, say, make `
 
 But this is a "soft challenge". The important thing is for you to flex your design muscles. This homework will be considered "complete" as long as it's clear you made some effort to redesign the site using Bootstrap and/or Foundation.
 
-## It looks nice enough when...
+## It "done" when...
 
-...you think it looks nice enough.
+...you think it's done.
 
 Unfortunately, beauty is subjective, so there will never be a clear stopping point when it comes to design.
 
 The best way to check your progress is to ask someone *else* to look at your site for 10 seconds and tell you what they don't like. People have a lot of trouble defining what looks good or bad, but everyone knows it when they see it.
+
+## A note about classes and IDs...
+
+Backbone relies on some of the classes and IDs that are in the `index.html` file. For instance, if you were to delete `id="grumbleTemplate"`, Backbone wouldn't know where to find the template for Grumbles.
+
+Deleting any of the IDs or classes that are present *when you first clone down this repo* will affect the app's functionality. However, feel free to **add** classes. For instance, it's no problem to turn `<button class="new">Create Grumble</button>` into `<button class="new btn btn-xs btn-danger">Create Grumble</button>`.
 
 ## There is a solution branch...
 
