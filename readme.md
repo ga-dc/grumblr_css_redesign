@@ -33,7 +33,3 @@ The best way to check your progress is to ask someone *else* to look at your sit
 ...is if you also push your code to a `gh-pages` branch on your fork! Then you and anyone you decide to share your code with will be able to see your Grumblr without having to clone it just by going to:
 
 https://[your_username].github.io/grumblr_css_redesign
-
-## Stuff to read
-
-- [How to make your site look half-decent (for programmers, by a programmer)](https://24ways.org/2012/how-to-make-your-site-look-half-decent)
