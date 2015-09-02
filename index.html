@@ -15,55 +15,147 @@
   <script src="js/backbone/views/grumble.js"></script>
   <script src="js/backbone/views/grumbleList.js"></script>
   <script src="js/backbone/views/grumbleCreate.js"></script>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/myAwesomeStyle.css">
   <title>Grumblr</title>
 </head>
-<body>
-  <h1>Grumblr</h1>
 
-  <div id="createGrumble">
-    <button class="new">New Grumble</button>
-    <div class="formContainer"></div>
-  </div>
+<body class="container">
+  <header class = "jumbotron row" id="createGrumble">
+    <div class="col-md-6">
+      <h1>Grumblr</h1>
+        <p>Share your thoughts, photos, and ... </P>
+        <p><button type="button" class="new btn btn-info btn-block">New Grumble</button></p>
+    </div>
+    <div class="col-md-6">
+      <div class="formContainer"></div>
+    </div>
+  </header>
 
-  <div id="grumbles">
-  </div>
+  <main id="grumbles">
+  </main>
 
   <script id="grumbleTemplate" type="text/x-handlebars-template">
-    <h2>{{ title }} <span class='delete'>(X)</span></h2>
-    by: {{ authorName }}
-    <p>
-      {{ content }}
-    </p>
-    <img src="{{ photoUrl }}" alt="">
-    <button class="edit">Update Grumble</button>
-    <form class="commentForm">
-      <label>Author Name:</label>
-      <input type="text" name="authorName">
-      <label>Content:</label>
-      <input type="text" name="content">
-      <button>Submit</button>
-    </form>
-    <div class="comments"></div>
+      <div class="col-md-6 col-xs-6">
+        <div class="thumbnail">
+          <img src="{{ photoUrl }}" alt="">
+          <div class="caption">
+            <h2>{{ title }}</h2>
+            by: {{ authorName }}
+            <p>{{ content }}</p>
+            <p><button class="edit btn btn-primary btn-xs">Update Grumble</button><button class="delete btn btn-danger btn-xs">Delete</button></p>
+            <p><button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">Comments</button></p>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="col-md-6">
+        <div class="comments">
+          <form class="commentForm">
+            <div class="form-horizontal">
+              <fieldset>
+                <label>Commenter Name:</label>
+                  <div><input type="text" name="authorName"></div>
+              </fieldset>
+              <fieldset>
+                <label>Content:</label>
+                  <div><input type="text" name="content"></div>
+              </fieldset>
+              <button class="btn btn-block">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div> -->
+    </script>
+
+  <script id="commentTemplate" type="text/x-handlebars-template">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+          <!-- <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Comments</h4>
+          </div> -->
+          <!-- <div class="comments">
+            <form class="commentForm">
+              <div class="form-horizontal">
+                <fieldset>
+                  <label>Commenter Name:</label>
+                    <div><input type="text" name="authorName"></div>
+                </fieldset>
+                <fieldset>
+                  <label>Content:</label>
+                    <div><input type="text" name="content"></div>
+                </fieldset>
+                <button class="btn btn-block">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div> -->
+
+        <!-- <div class="modal-body"> -->
+              <!-- <div class="comments">
+                <form class="commentForm">
+                  <div class="form-horizontal">
+                    <fieldset>
+                      <label>Commenter Name:</label>
+                        <div><input type="text" name="authorName"></div>
+                    </fieldset>
+                    <fieldset>
+                      <label>Content:</label>
+                        <div><input type="text" name="content"></div>
+                    </fieldset>
+                    <button class="btn btn-block">Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div> -->
+            <!-- <span><small>by {{ authorName }} <a class="deleteComment text-warning">(Delete)</a></small></span>
+            <div>{{ content }}</div>
+            <button class="deleteComment">Delete</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
   </script>
 
   <script id="grumbleFormTemplate" type="text/x-handlebars-template">
     <form class="grumbleForm">
-      <input type="text" name="title" value="{{ title }}">
-      by: <input type="text" name="authorName" value="{{ authorName }}">
-      <textarea name="content">{{ content }}</textarea>
-      <img src="{{ photoUrl }}" alt="">
-      <input type="text" name="photoUrl" value="{{ photoUrl }}">
-      <button class="submit">Submit</button>
-      <button class="cancel">Cancel</button>
+      <div class="form-horizontal">
+        <fieldset>
+          <label>Title:</label>
+          <div><input type="text" name="title" value="{{ title }}"></div>
+        </fieldset>
+        <fieldset>
+          <label>By:</label>
+          <div><input type="text" name="authorName" value="{{ authorName }}"></div>
+        </fieldset>
+        <fieldset>
+          <label>Content:</label>
+          <div><textarea name="content">{{ content }}</textarea></div>
+        </fieldset>
+        <fieldset>
+          <label>Photo URL:</label>
+          <div><input type="text" name="photoUrl" value="{{ photoUrl }}"></div>
+        </fieldset>
+        <fieldset>
+          <label>&nbsp;</label>
+          <div>
+            <button class="btn submit btn-primary">Submit</button>
+            <button class="btn cancel">Cancel</button>
+          </div>
+        </fieldset>
+      </div>
     </form>
   </script>
 
-  <script id="commentTemplate" type="text/x-handlebars-template">
-      <span>by: {{ authorName }}</span>
-      <div>{{ content }}</div>
-      <button class="deleteComment">Delete</button>
-  </script>
+
 
 </body>
 </html>
