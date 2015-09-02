@@ -1,0 +1,40 @@
+@import "../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+$primary: #FFFEE5;
+$secondary: #D1FFE5;
+
+.container {
+  background-color: $primary;
+}
+
+.jumbotron {
+  background-color: $secondary;
+}
+
+h1{
+  color:#E8FFE7;
+  text-transform:uppercase;
+  font-family:'Helvetica Neue';
+  font-weight:100;
+  font-size:10em;
+  transform:skew(8deg);
+}
+
+input,
+textarea {
+  @extend .form-control;
+}
+label {
+  @extend .control-label;
+}
+fieldset {
+  @extend .form-group;
+}
+.form-horizontal{
+  label{
+    @extend .col-sm-3;
+  }
+  div{
+    @extend .col-sm-9;
+  }
+}
