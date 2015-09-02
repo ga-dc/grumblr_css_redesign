@@ -1,0 +1,18 @@
+@import "../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+button {
+    @extend .btn;
+}
+
+$buttonMargin: 15px;
+
+.edit {
+  margin-top: $buttonMargin;
+}
+
+.deleteComment {
+  margin-bottom: $buttonMargin;
+}
+.submit {
+  margin-left: $buttonMargin;
+}
