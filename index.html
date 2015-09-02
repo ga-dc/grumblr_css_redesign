@@ -15,28 +15,45 @@
   <script src="js/backbone/views/grumble.js"></script>
   <script src="js/backbone/views/grumbleList.js"></script>
   <script src="js/backbone/views/grumbleCreate.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <link rel="stylesheet" href="css/style.css">
   <title>Grumblr</title>
 </head>
-<body>
+<body class="container">
+  <header class="jumbotron row" id="createGrumble">
+    <div class="col-sm-6 col-md-6 col-lg-6">
   <h1>Grumblr</h1>
+      <p></p>
+    <button class="new btn btn-primary btn-block">New Grumble</button>
+    <div class="col-md-10">
+      <div class="formContainer"></div>
+    </div>
+  </header>
 
-  <div id="createGrumble">
-    <button class="new">New Grumble</button>
-    <div class="formContainer"></div>
-  </div>
-
-  <div id="grumbles">
-  </div>
+  <main id="grumbles">
+  </main>
 
   <script id="grumbleTemplate" type="text/x-handlebars-template">
-    <h2>{{ title }} <span class='delete'>(X)</span></h2>
-    by: {{ authorName }}
-    <p>
-      {{ content }}
-    </p>
-    <img src="{{ photoUrl }}" alt="">
-    <button class="edit">Update Grumble</button>
+
+    <div class="col-md-10 well">
+      <h2>{{ title }}</h2>
+      <p class="lead">by: {{ authorName }}</p>
+
+      <p>
+        {{ content }}
+      </p>
+
+      <img class="img-responsive img-rounded" src="{{ photoUrl }}" alt="">
+    </div>
+    <button class="edit btn btn-xs">Update Grumble</button>
+    <button class="delete btn btn-danger btn-xs">Delete</button>
+
+    <div class="comments"></div>
+    <form class="commentForm">
+      <div class="form-horizontal">
+      </fieldset>
+
+      <fieldset>
     <form class="commentForm">
       <label>Author Name:</label>
       <input type="text" name="authorName">
@@ -49,9 +66,16 @@
 
   <script id="grumbleFormTemplate" type="text/x-handlebars-template">
     <form class="grumbleForm">
-      <input type="text" name="title" value="{{ title }}">
-      by: <input type="text" name="authorName" value="{{ authorName }}">
+      <div class="form-horizontal">
+        <fieldset>
+          <label>Title:</label>
+          <div><input type="text" name="title" value="{{ title }}"></div>
+        </fieldset>
+        <fieldset>
+      <label>by:</label>
+         <div><input type="text" name="authorName" value="{{ authorName }}"></div>
       <textarea name="content">{{ content }}</textarea>
+        </fieldset>
       <img src="{{ photoUrl }}" alt="">
       <input type="text" name="photoUrl" value="{{ photoUrl }}">
       <button class="submit">Submit</button>
@@ -60,9 +84,9 @@
   </script>
 
   <script id="commentTemplate" type="text/x-handlebars-template">
-      <span>by: {{ authorName }}</span>
-      <div>{{ content }}</div>
-      <button class="deleteComment">Delete</button>
+      <p>by: {{ authorName }}</p>
+      <p>{{ content }}</p>
+      <button class="btn deleteComment btn delete">Delete</button>
   </script>
 
 </body>
