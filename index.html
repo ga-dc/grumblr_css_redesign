@@ -15,14 +15,15 @@
   <script src="js/backbone/views/grumble.js"></script>
   <script src="js/backbone/views/grumbleList.js"></script>
   <script src="js/backbone/views/grumbleCreate.js"></script>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="assets/grumblr.css">
   <title>Grumblr</title>
 </head>
 <body>
+<div class="jumbotron">
   <h1>Grumblr</h1>
-
+</div>
   <div id="createGrumble">
-    <button class="new">New Grumble</button>
+    <button class="new btn-primary btn-lg">New Grumble</button>
     <div class="formContainer"></div>
   </div>
 
@@ -35,14 +36,14 @@
     <p>
       {{ content }}
     </p>
-    <img src="{{ photoUrl }}" alt="">
-    <button class="edit">Update Grumble</button>
+    <img class="col-md-12" src="{{ photoUrl }}" alt="">
+    <button class="edit col-md-offset-10">Update Grumble</button>
     <form class="commentForm">
       <label>Author Name:</label>
       <input type="text" name="authorName">
       <label>Content:</label>
       <input type="text" name="content">
-      <button>Submit</button>
+      <button class ="submit btn-success">Submit</button>
     </form>
     <div class="comments"></div>
   </script>
@@ -54,15 +55,15 @@
       <textarea name="content">{{ content }}</textarea>
       <img src="{{ photoUrl }}" alt="">
       <input type="text" name="photoUrl" value="{{ photoUrl }}">
-      <button class="submit">Submit</button>
-      <button class="cancel">Cancel</button>
+      <button class="submit btn-success">Submit</button>
+      <button class="cancel btn-warning">Cancel</button>
     </form>
   </script>
 
   <script id="commentTemplate" type="text/x-handlebars-template">
       <span>by: {{ authorName }}</span>
       <div>{{ content }}</div>
-      <button class="deleteComment">Delete</button>
+      <button class="deleteComment btn-xs btn-danger">Delete</button>
   </script>
 
 </body>
