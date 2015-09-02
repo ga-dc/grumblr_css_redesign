@@ -5842,7 +5842,18 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
-body {
-  color: #BADA55; }
+.container {
+  background-color: #FFFEE5; }
+
+.jumbotron {
+  background-color: #D1FFE5; }
+
+h1 {
+  color: #E8FFE7;
+  text-transform: uppercase;
+  font-family: 'Helvetica Neue';
+  font-weight: 100;
+  font-size: 10em;
+  transform: skew(8deg); }
 
 /*# sourceMappingURL=myAwesomeStyles.css.map */

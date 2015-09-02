@@ -1,9 +1,23 @@
 @import "../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
-$brand: #BADA55;
+$primary: #FFFEE5;
+$secondary: #D1FFE5;
 
-body {
-  color: $brand;
+.container {
+  background-color: $primary;
+}
+
+.jumbotron {
+  background-color: $secondary;
+}
+
+h1{
+  color:#E8FFE7;
+  text-transform:uppercase;
+  font-family:'Helvetica Neue';
+  font-weight:100;
+  font-size:10em;
+  transform:skew(8deg);
 }
 
 input,
