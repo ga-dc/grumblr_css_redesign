@@ -31,25 +31,40 @@
   </main>
 
   <script id="grumbleTemplate" type="text/x-handlebars-template">
-      <div class="col-md-6 well">
-        <h2>{{ title }} <span class='delete'>(X)</span></h2>
-        by: {{ authorName }}
-        <p>
-          {{ content }}
-        </p>
-        <img class="img-responsive img-rounded" src="{{ photoUrl }}" alt="">
-      </div>
-      <div class="col-md-6">
-        <button class="edit">Update Grumble</button>
-        <div class="comments"></div>
-        <form class="commentForm">
-          <label>Author Name:</label>
-          <input type="text" name="authorName">
-          <label>Content:</label>
-          <input type="text" name="content">
-          <button>Submit</button>
-        </form>
-      </div>
+    <div class="col-md-6 well">
+      <h2>{{ title }} </h2>
+      <h3>by: {{ authorName }}</h3>
+      <p>
+        <button class='delete btn btn-danger btn-xs'>Delete</button>
+        <button class="edit btn btn-xs">Update Grumble</button>
+      </p>
+      <p>
+        {{ content }}
+      </p>
+      <img class="img-responsive img-rounded" src="{{ photoUrl }}" alt="">
+    </div>
+    <div class="col-md-6">
+      <div class="comments"></div>
+      <form class="commentForm form-horizontal">
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Author Name:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Author Name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-2 control-label">Content:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputPassword3" placeholder="Content">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-sm">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
   </script>
 
   <script id="grumbleFormTemplate" type="text/x-handlebars-template">
@@ -65,9 +80,10 @@
   </script>
 
   <script id="commentTemplate" type="text/x-handlebars-template">
-    <span>by: {{ authorName }}</span>
-    <div>{{ content }}</div>
-    <button class="deleteComment">Delete</button>
+    <p>{{ content }}</p>
+    <p>by: {{ authorName }}</p>
+    <a class="deleteComment text-warning">(Delete)</a>
+    <hr>
   </script>
 
 </body>
