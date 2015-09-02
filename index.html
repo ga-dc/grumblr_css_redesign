@@ -15,55 +15,78 @@
   <script src="js/backbone/views/grumble.js"></script>
   <script src="js/backbone/views/grumbleList.js"></script>
   <script src="js/backbone/views/grumbleCreate.js"></script>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/myStyles.css">
   <title>Grumblr</title>
 </head>
 <body>
-  <h1>Grumblr</h1>
 
-  <div id="createGrumble">
-    <button class="new">New Grumble</button>
-    <div class="formContainer"></div>
-  </div>
+<div class="clearfix">
+
+  <div class="container">
+    <div class="jumbotron row">
+      <div class="col-md-8">
+        <h1>Grumblr</h1>
+
+        <div id="createGrumble">
+          <button class="btn btn-primary btn-block" "new">New Grumble</button>
+        </div>
+      <div class="col-md-4">
+          <div class="formContainer"></div>
+      </div>
+
+      </div>
+    </div>
+
 
   <div id="grumbles">
   </div>
 
-  <script id="grumbleTemplate" type="text/x-handlebars-template">
-    <h2>{{ title }} <span class='delete'>(X)</span></h2>
-    by: {{ authorName }}
-    <p>
-      {{ content }}
-    </p>
-    <img src="{{ photoUrl }}" alt="">
-    <button class="edit">Update Grumble</button>
-    <form class="commentForm">
-      <label>Author Name:</label>
-      <input type="text" name="authorName">
-      <label>Content:</label>
-      <input type="text" name="content">
-      <button>Submit</button>
-    </form>
-    <div class="comments"></div>
-  </script>
-
-  <script id="grumbleFormTemplate" type="text/x-handlebars-template">
-    <form class="grumbleForm">
-      <input type="text" name="title" value="{{ title }}">
-      by: <input type="text" name="authorName" value="{{ authorName }}">
-      <textarea name="content">{{ content }}</textarea>
+  <div class="col-md-5 well"
+    <script id="grumbleTemplate" type="text/x-handlebars-template">
+      <h2>{{ title }} <span class='delete'>(X)</span></h2>
+      <blockquote>
+      By: {{ authorName }}
+      <p class="text-info">
+        {{ content }}
+      </p>
+    </blockquote>
       <img src="{{ photoUrl }}" alt="">
-      <input type="text" name="photoUrl" value="{{ photoUrl }}">
-      <button class="submit">Submit</button>
-      <button class="cancel">Cancel</button>
-    </form>
-  </script>
+      <button class="btn btn-primary" "edit">Update Grumble</button>
+
+      <form class="commentForm" "form-group">
+        <label for="Author Name:"></label>
+        <input type="text" name="authorName" placeholder="What's your name?">
+        <label for="Content:"></label>
+        <input class="form-control input-lg" type="text" name="content" placeholder="What's up?">
+        <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="bottom" title="complain away!" data-content="popover on bottom">Submit your Grumble</button>
+      </form>
+      <div class="comments"></div>
+    </script>
+  </div>
+
+
+  <div class="col-md-5">
+    <script id="grumbleFormTemplate" type="text/x-handlebars-template">
+      <form class="grumbleForm">
+        <input type="text" name="title" value="{{ title }}">
+        by: <input type="text" name="authorName" value="{{ authorName }}">
+        <textarea name="content">{{ content }}</textarea>
+        <img class="img-responsive img-rounded" src="{{ photoUrl }}" alt="">
+        <input type="text" name="photoUrl" value="{{ photoUrl }}">
+        <button class="btn btn-primary" "submit">Submit</button>
+        <button class="btn btn-primary" "cancel">Cancel</button>
+      </form>
+    </script>
+  </div>
 
   <script id="commentTemplate" type="text/x-handlebars-template">
-      <span>by: {{ authorName }}</span>
+      <span>By: {{ authorName }}</span>
       <div>{{ content }}</div>
-      <button class="deleteComment">Delete</button>
+      <button class="btn btn-danger btn-xs" "deleteComment">Delete</button>
   </script>
-
 </body>
+
+</div>
+</div>
 </html>
