@@ -19,13 +19,13 @@
   <title>Grumblr</title>
 </head>
 <body class="container">
-  <header class="jumbotron row">
-    <div class="col-md-7">
+  <header class="jumbotron row" id="createGrumble">
+    <div class="col-md-5">
       <h1>Grumblr</h1>
       <h2>Your Tumblr for grumbles</h2>
       <button class="new btn btn-lg btn-primary">New Grumble</button>
     </div>
-      <div class="col-md-4" id="createGrumble">
+      <div class="col-md-7">
         <div class="formContainer"></div>
       </div>
   </header>
@@ -66,14 +66,32 @@
 </div>
 
   <script id="grumbleFormTemplate" type="text/x-handlebars-template">
-    <form class="grumbleForm">
-      <input type="text" name="title" value="{{ title }}">
-      by: <input type="text" name="authorName" value="{{ authorName }}">
-      <textarea name="content">{{ content }}</textarea>
-      <img src="{{ photoUrl }}" alt="">
-      <input type="text" name="photoUrl" value="{{ photoUrl }}">
-      <button class="submit">Submit</button>
-      <button class="cancel">Cancel</button>
+    <form class="grumbleForm" role="form">
+      <div class="form-horizontal">
+        <fieldset>
+         <label>Title:</label>
+         <div><input type="text" name="title" value="{{ title }}"></div>
+       </fieldset>
+       <fieldset>
+         <label>By:</label>
+         <div><input type="text" name="authorName" value="{{ authorName }}"></div>
+       </fieldset>
+       <fieldset>
+         <label>Content:</label>
+         <div><textarea name="content">{{ content }}</textarea></div>
+       </fieldset>
+       <fieldset>
+         <label>Photo URL:</label>
+         <div><input type="text" name="photoUrl" value="{{ photoUrl }}"></div>
+       </fieldset>
+       <fieldset>
+         <label>&nbsp;</label>
+         <div>
+           <button class="btn submit btn-primary">Submit</button>
+           <button class="btn cancel">Cancel</button>
+         </div>
+       </fieldset>
+      </div>
     </form>
   </script>
 
