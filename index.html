@@ -46,20 +46,21 @@
         <p>
           {{ content }}
         </p>
-        <img src="{{ photoUrl }}" alt="" >
-        <button class="edit">Update Grumble</button>
+        <img src="{{ photoUrl }}" alt="">
+        <button class="edit btn-xs">Update Grumble</button>
+        <button class="delete btn-xs">Delete Grumble</button>
       </div>
       <div class="col-md-5">
-        <form class="commentForm">
-          <div>
+        <form class="commentForm" role="form">
+          <div class="form-group">
             <label>Author Name:</label>
-            <input type="text" name="authorName" class="col-md-12">
+            <input type="text" name="authorName">
           </div>
-          <div>
+          <div class="form-group"> 
             <label>Content:</label>
-            <input type="text" name="content" class="col-md-12">
+            <input type="text" name="content">
           </div>
-          <button>Submit</button>
+          <button class="col-md-12">Submit</button>
         </form>
         <div class="comments"></div>
       </div>
@@ -79,9 +80,9 @@
   </script>
 
   <script id="commentTemplate" type="text/x-handlebars-template">
-      <span>by: {{ authorName }}</span>
       <div>{{ content }}</div>
-      <button class="deleteComment">Delete</button>
+      <span>by: {{ authorName }}</span>
+      <button class="deleteComment btn-sm">Delete</button>
   </script>
 
 </body>
