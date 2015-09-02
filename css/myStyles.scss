@@ -1,0 +1,29 @@
+@import "../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+body {
+  background: #fefefe;
+  line-height: 1.6em;
+}
+
+img {
+  // padding-bottom: .5em;
+  @extend .img-rounded;
+  @extend .img-responsive;
+}
+
+input,
+textarea {
+  @extend .form-control;
+}
+
+button {
+  @extend .btn;
+}
+
+button.delete {
+  @extend .btn-danger;
+}
+
+button.deleteComment {
+  @extend .btn-link;
+}
