@@ -1,1 +1,28 @@
 @import "../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+body {
+  background: #fbfbfb;
+}
+
+img {
+  @extend .img-responsive;
+  @extend .well;
+}
+
+input,
+textarea {
+  @extend .form-control;
+}
+
+label {
+  @extend .control-label;
+}
+
+.form-horizontal{
+  label{
+    @extend .col-sm-3;
+  }
+  div{
+    @extend .col-sm-9;
+  }
+}

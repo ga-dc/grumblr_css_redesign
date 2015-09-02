@@ -18,37 +18,55 @@
   <link rel="stylesheet" href="css/style.css">
   <title>Grumblr</title>
 </head>
-<body>
-  <h1>Grumblr</h1>
+<body class="container">
+  <header class="jumbotron row">
+    <div class="col-md-7">
+      <h1>Grumblr</h1>
+      <h2>Your Tumblr for grumbles</h2>
+      <button class="new btn btn-lg btn-primary">New Grumble</button>
+    </div>
+      <div class="col-md-4" id="createGrumble">
+        <div class="formContainer"></div>
+      </div>
+  </header>
+    <div id="grumbles">
+    </div>
 
-  <div id="createGrumble">
-    <button class="new btn btn-lg btn-primary">New Grumble</button>
-    <div class="formContainer"></div>
-  </div>
-
-  <div id="grumbles">
-  </div>
-
+  <div class="row container">
   <script id="grumbleTemplate" type="text/x-handlebars-template">
-    <h2>{{ title }} <span class='delete btn btn-danger'>Delete</span></h2>
-    by: {{ authorName }}
-    <p>
-      {{ content }}
-    </p>
-    <img src="{{ photoUrl }}" alt="">
-    <button class="edit">Update Grumble</button>
-    <form class="commentForm">
-      <label>Author Name:</label>
-      <input type="text" name="authorName">
-      <label>Content:</label>
-      <input type="text" name="content">
-      <button>Submit</button>
-    </form>
-    <div class="comments"></div>
+    <div class="jumbotron col-md-7">
+      <h2>{{ title }}</h2>
+      <h4>by: {{ authorName }}</h4>
+      <p>
+        {{ content }}
+      </p>
+      <img src="{{ photoUrl }}" alt="">
+      <button type="button" class="edit btn btn-default">Update Grumble</button>
+      <button type="button" class="delete btn btn-danger">Delete</button>
+    </div>
+
+    <div class="col-md-5">
+      <form class="commentForm" role="form">
+        <div class="form-group">
+          <label>Author Name:</label>
+          <input type="text" name="authorName">
+        </div>
+        <div class="form-group">
+          <label>Content:</label>
+          <input class="input-lg" type="text" name="content">
+        </div>
+        <div class="form-group">
+          <button type="button" class="btn btn-info">Submit</button>
+        </div>
+      </form>
+      <ul class="comments list-group">
+      </ul>
+    </div>
   </script>
+</div>
 
   <script id="grumbleFormTemplate" type="text/x-handlebars-template">
-    <form class="grumbleForm form-control">
+    <form class="grumbleForm">
       <input type="text" name="title" value="{{ title }}">
       by: <input type="text" name="authorName" value="{{ authorName }}">
       <textarea name="content">{{ content }}</textarea>
@@ -60,9 +78,11 @@
   </script>
 
   <script id="commentTemplate" type="text/x-handlebars-template">
-      <span>by: {{ authorName }}</span>
+    <li class="list-group-item">
       <div>{{ content }}</div>
+      <span>by: {{ authorName }}</span>
       <button class="deleteComment">Delete</button>
+    </li>
   </script>
 
 </body>
